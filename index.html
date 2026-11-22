@@ -69,7 +69,7 @@
   #veil small { font-style: italic; font-size: 18px; color: #dcc3aa; }
   @keyframes halo { from { transform: scale(1); opacity: .9; } to { transform: scale(1.7); opacity: 0; } }
   /* tap-to-begin card */
-  #veil .vcard { position: relative; display: flex; flex-direction: column; align-items: center; gap: 12px; width: min(86vw, 380px); padding: 38px 24px 34px; border: 1px solid color-mix(in srgb, #e6c377 70%, transparent); border-radius: 200px 200px 22px 22px; background: linear-gradient(180deg, rgba(109, 22, 41, .55), rgba(36, 5, 13, .75)); box-shadow: 0 30px 60px rgba(0, 0, 0, .45), inset 0 0 0 7px rgba(36, 5, 13, .5), inset 0 0 0 8px rgba(230, 195, 119, .35); }
+  #veil .vcard { position: relative; display: flex; flex-direction: column; align-items: center; gap: 20px; width: min(86vw, 380px); padding: 80px 24px 34px; border: 1px solid color-mix(in srgb, #e6c377 70%, transparent); border-radius: 200px 200px 22px 22px; background: linear-gradient(180deg, rgba(109, 22, 41, .55), rgba(36, 5, 13, .75)); box-shadow: 0 30px 60px rgba(0, 0, 0, .45), inset 0 0 0 7px rgba(36, 5, 13, .5), inset 0 0 0 8px rgba(230, 195, 119, .35);     height: 450px;}
   #veil .vcap { font-family: 'Marcellus', serif; font-size: 11px; letter-spacing: .4em; text-transform: uppercase; color: #e6c377; margin-top: 26px; }
   #veil .vname { font-family: 'Pinyon Script', cursive; font-size: clamp(40px, 11vw, 54px); line-height: 1.2; padding: 0 8px; -webkit-text-stroke: .03em #e6c377; paint-order: stroke fill; }
   #veil .orn { margin: 0 auto 4px; width: 150px; }
@@ -338,10 +338,10 @@
 <!-- ================= Opening: padlock and key ================= -->
 <div id="intro">
   <div class="gate-stage">
-    <div class="gate-title">
+    <!-- <div class="gate-title">
       <p class="caps" data-ur="تاریخ محفوظ کر لیجیے">Save the date</p>
       <h2 class="foil" data-ur="حفصہ اور اسامہ">Hafsa &amp; Usama</h2>
-    </div>
+    </div> -->
     <svg class="lock" viewBox="0 0 200 360" aria-hidden="true">
       <defs>
         <linearGradient id="lockG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8a6420"/><stop offset=".35" stop-color="#fff1bd"/><stop offset=".65" stop-color="#d1a649"/><stop offset="1" stop-color="#8a6420"/></linearGradient>
@@ -368,14 +368,18 @@
 <button class="lang" id="langBtn" type="button" aria-label="Switch language · زبان تبدیل کریں">اردو</button>
 
 <button id="veil" aria-label="Tap to begin, with music">
+
+<div></div>
   <span class="vcard">
     <span class="vcap" data-ur="آپ مدعو ہیں">You are invited</span>
-    <span class="vname foil" data-ur="حفصہ اور اسامہ">Hafsa &amp; Usama</span>
+    <!-- <span class="vname foil" data-ur="حفصہ اور اسامہ">Hafsa &amp; Usama</span> -->
     <svg class="orn" viewBox="0 0 240 30" aria-hidden="true"><use href="#orn"/></svg>
     <span class="note" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg></span>
     <b data-ur="شروع کرنے کے لیے چھوئیں">Tap to begin</b>
     <small data-ur="آواز کے ساتھ دیکھنے کا لطف دوبالا ہے">Best enjoyed with sound on</small>
   </span>
+
+
 </button>
 
 <main>
