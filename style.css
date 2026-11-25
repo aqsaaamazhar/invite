@@ -1,5 +1,10 @@
 :root { --bg: #24050d; --bg2: #6d1629; --ink: #f9ecd4; --soft: #d8bfa6; --accent: #e6c377; --accent2: #f0a3ae; }
 
+
+
+
+
+
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
   body { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 20px; line-height: 1.6; color: var(--ink); background: var(--bg); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
@@ -82,7 +87,7 @@
   body.opened .wreath .r, body.opened .wreath .l { scale: 1; }
   .hero-text { position: relative; z-index: 2; transform: translateZ(60px); max-width: calc(var(--w) * .54); }
   .hero .caps { font-size: max(9px, calc(var(--w) * .0135)); letter-spacing: .3em; }
-  .hero h1 { font-family: 'Noto Nastaliq Urdu', cursive; font-weight: 400; font-size: calc(var(--w) * .096); line-height: 1.08; margin: 8px 0; white-space: nowrap; filter: drop-shadow(0 3px 8px rgba(0, 0, 0, .5)); }
+  .hero h1 { font-family: 'Pinyon Script', cursive; font-weight: 2; font-size: calc(var(--w) * .14); line-height: 1.08; margin: 8px 0; white-space: nowrap; filter: drop-shadow(0 3px 8px rgba(0, 0, 0, .5)); }
   .hero h1 span { display: block; padding: 0 6px; margin: 0 -40px; }
   .hero h1 .weds { font-family: 'Marcellus', serif; font-size: clamp(14px, 3.4vw, 20px); letter-spacing: .3em; color: var(--accent2); -webkit-text-fill-color: currentColor; margin: 8px 0; }
   .hero .sub { font-style: italic; color: var(--soft); font-size: max(15px, calc(var(--w) * .026)); }
@@ -291,3 +296,357 @@ section.plan-invite-part {background: url(background-plan-invite-part.png);backg
     .chapter .spray.tl, .chapter .spray.tr { top: 10px; }
     .chapter { padding-top: 130px; }
   }
+
+
+
+
+
+
+/* ================= WEDDING TIMELINE ================= */
+
+.wedding-timeline {
+    width: 100%;
+    max-width: 1000px;
+    margin: 70px auto;
+    padding: 50px 25px;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    box-sizing: border-box;
+}
+
+/* Heading */
+
+.timeline-heading {
+    text-align: center;
+    margin-bottom: 65px;
+}
+
+.timeline-heading span {
+    font-family: 'Marcellus', serif;
+    color: var(--accent);
+    font-size: 12px;
+    letter-spacing: 4px;
+}
+
+.timeline-heading h2 {
+    font-family: 'Pinyon Script', cursive;
+    font-size: clamp(45px, 6vw, 65px);
+    font-weight: 400;
+    color: var(--accent);
+    margin: 12px 0;
+}
+
+.timeline-heading p {
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--soft);
+    font-size: 19px;
+    font-style: italic;
+}
+
+/* Timeline */
+
+.timeline {
+    position: relative;
+    width: 100%;
+}
+
+/* Center golden line */
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    width: 2px;
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        var(--accent),
+        var(--accent),
+        transparent
+    );
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Timeline items */
+
+.timeline-item {
+    width: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 45px;
+    box-sizing: border-box;
+}
+
+.timeline-item:nth-child(odd) {
+    justify-content: flex-end;
+    padding-right: 45px;
+}
+
+.timeline-item:nth-child(even) {
+    margin-left: 50%;
+    padding-left: 45px;
+}
+
+/* Event panels */
+
+.timeline-content {
+    width: 100%;
+    max-width: 390px;
+    padding: 25px 28px;
+    text-align: center;
+    background: linear-gradient(
+        135deg,
+        rgba(109, 22, 41, 0.65),
+        rgba(36, 5, 13, 0.75)
+    );
+    border: 1px solid rgba(230, 195, 119, 0.65);
+    border-radius: 5px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.18);
+    box-sizing: border-box;
+}
+
+/* Time */
+
+.timeline-time {
+    display: block;
+    color: var(--accent);
+    font-family: 'Marcellus', serif;
+    font-size: 25px;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+/* Event title */
+
+.timeline-content h3 {
+    font-family: 'Marcellus', serif;
+    color: var(--ink);
+    font-size: 17px;
+    letter-spacing: 2px;
+    margin: 0 0 10px;
+}
+
+/* Description */
+
+.timeline-content p {
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--soft);
+    font-size: 18px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Center markers */
+
+.timeline-marker {
+    position: absolute;
+    width: 43px;
+    height: 43px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 2px solid var(--accent);
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 21px;
+    z-index: 2;
+    box-shadow: 0 0 15px rgba(230, 195, 119, 0.2);
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.timeline-item:nth-child(odd) .timeline-marker {
+    right: -21px;
+}
+
+.timeline-item:nth-child(even) .timeline-marker {
+    left: -22px;
+}
+
+/* Hover effect */
+
+.timeline-content {
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 650px) {
+
+    .wedding-timeline {
+        padding: 35px 12px;
+        margin: 35px auto;
+    }
+
+    .timeline-heading {
+        margin-bottom: 45px;
+    }
+
+    .timeline {
+        padding-left: 42px;
+    }
+
+    .timeline::before {
+        left: 15px;
+    }
+
+    .timeline-item,
+    .timeline-item:nth-child(even),
+    .timeline-item:nth-child(odd) {
+        width: 100%;
+        margin-left: 0;
+        padding: 0 0 0 20px;
+        justify-content: flex-start;
+        margin-bottom: 28px;
+    }
+
+    .timeline-marker,
+    .timeline-item:nth-child(odd) .timeline-marker,
+    .timeline-item:nth-child(even) .timeline-marker {
+        left: -42px;
+        right: auto;
+        width: 34px;
+        height: 34px;
+        font-size: 17px;
+    }
+
+    .timeline-content {
+        max-width: 100%;
+        padding: 20px 15px;
+    }
+
+    .timeline-time {
+        font-size: 21px;
+    }
+
+    .timeline-content h3 {
+        font-size: 15px;
+    }
+
+    .timeline-content p {
+        font-size: 16px;
+    }
+}
+
+/* Urdu language */
+
+.ur .timeline-heading,
+.ur .timeline-content {
+    letter-spacing: 0;
+}
+
+html.ur .timeline-heading span,
+html.ur .timeline-heading h2,
+html.ur .timeline-heading p,
+html.ur .timeline-time,
+html.ur .timeline-content h3,
+html.ur .timeline-content p {
+    font-family: 'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq', 'Urdu Typesetting', serif;
+    letter-spacing: 0;
+}
+
+html.ur .timeline-heading h2 {
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+html.ur .timeline-heading p,
+html.ur .timeline-content p {
+    font-style: normal;
+    line-height: 1.9;
+}
+
+html.ur .timeline-time,
+html.ur .timeline-content h3 {
+    direction: rtl;
+}
+
+
+/* Venue Map - Centered Design */
+
+.venue-map {
+    width: 100%;
+    max-width: 1400px;
+    margin: 65px auto;
+    padding: 35px 20px;
+    box-sizing: border-box;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Map Heading */
+
+.venue-map-heading {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.venue-map-heading .caps {
+    font-family: 'Marcellus', serif;
+    color: var(--accent);
+    letter-spacing: 3px;
+    font-size: 12px;
+}
+
+.venue-map-heading h2 {
+    font-family: 'Pinyon Script', cursive;
+    color: var(--accent);
+    font-size: 55px;
+    font-weight: 400;
+    margin: 10px 0;
+}
+
+.venue-map-heading p:last-child {
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--soft);
+    font-size: 19px;
+    font-style: italic;
+}
+
+/* Map Frame */
+
+.venue-map-frame {
+    width: 75%;
+    height: 650px;
+    margin: 0 auto;
+    overflow: hidden;
+    border: 1px solid rgba(230, 195, 119, 0.75);
+    border-radius: 6px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+}
+
+.venue-map-frame iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border: 0;
+}
+
+/* Mobile Responsive */
+
+@media (max-width: 600px) {
+    .venue-map {
+        padding: 25px 10px;
+        margin: 35px auto;
+    }
+
+    .venue-map-frame {
+        width: 95%;
+        height: 480px;
+    }
+
+    .venue-map-heading h2 {
+        font-size: 43px;
+    }
+}

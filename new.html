@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hafsa &amp; Usama | Save the Date</title>
+<meta name="description" content="Hafsa and Usama invite you. Save the date: Friday, 20 March 2027, 7:00 PM, Royal Dynasty Marquee.">
+<meta property="og:title" content="Hafsa &amp; Usama | Save the Date">
+<meta property="og:description" content="Friday 20 March 2027 · 7:00 PM · Royal Dynasty Marquee">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#24050d">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Marcellus&family=Pinyon+Script&family=Noto+Nastaliq+Urdu:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="mystyle.css">
+</head>
+<body class="locked">
+
+<svg class="sprite" aria-hidden="true">
+  <defs>
+    <linearGradient id="goldG" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#a67c2a"/><stop offset=".5" stop-color="#fff1bd"/><stop offset="1" stop-color="#c99d3f"/>
+    </linearGradient>
+    <radialGradient id="roseShade" cx=".42" cy=".38" r=".62">
+      <stop offset="0" stop-color="#fff" stop-opacity=".36"/><stop offset=".55" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#28000a" stop-opacity=".36"/>
+    </radialGradient>
+  </defs>
+  <symbol id="rose" viewBox="0 0 100 100">
+    <g fill="currentColor" stroke="#28000a" stroke-opacity=".3" stroke-width="1">
+      <circle cx="50" cy="26" r="24"/><circle cx="72.8" cy="42.6" r="24"/><circle cx="64.1" cy="69.4" r="24"/><circle cx="35.9" cy="69.4" r="24"/><circle cx="27.2" cy="42.6" r="24"/>
+      <circle cx="50" cy="50" r="27"/>
+    </g>
+    <circle cx="50" cy="50" r="38" fill="url(#roseShade)"/>
+    <path d="M50 30 C63 30 72 40 70 52 C68 64 58 71 47 69 C37 67 30 58 32 48 C34 40 41 35 49 37 C56 39 61 45 59 52 C57 58 51 61 46 59 C42 57 40 52 42 48 C44 45 48 44 51 46" fill="none" stroke="#32000e" stroke-opacity=".5" stroke-width="2.2" stroke-linecap="round"/>
+    <path d="M50 30 C63 30 72 40 70 52 C68 64 58 71 47 69 C37 67 30 58 32 48 C34 40 41 35 49 37 C56 39 61 45 59 52" fill="none" stroke="#fff" stroke-opacity=".32" stroke-width="1" stroke-linecap="round" transform="translate(-1.4 -1.8)"/>
+  </symbol>
+  <symbol id="orn" viewBox="0 0 240 30">
+    <g id="orn-half">
+      <path d="M106 15 C94 1 70 2 62 14 C56 23 43 22 43 15 C43 9 51 8 53 13"/>
+      <path d="M100 15 C92 24 76 26 66 20"/><path d="M38 15 H8"/><circle class="dot" cx="4" cy="15" r="1.8"/>
+    </g>
+    <use href="#orn-half" transform="translate(240 0) scale(-1 1)"/>
+    <path d="M120 3 l9 12 l-9 12 l-9 -12 Z"/><path class="dot" d="M120 9 l4.5 6 l-4.5 6 l-4.5 -6 Z"/>
+  </symbol>
+</svg>
+
+<div class="sky"></div>
+<canvas id="fx" aria-hidden="true"></canvas>
+
+<!-- ================= Opening: padlock and key ================= -->
+<div id="intro">
+  <div class="gate-stage">
+    <!-- <div class="gate-title">
+      <p class="caps" data-ur="تاریخ محفوظ کر لیجیے">Save the date</p>
+      <h2 class="foil" data-ur="حفصہ اور اسامہ">Hafsa &amp; Usama</h2>
+    </div> -->
+    <svg class="lock" viewBox="0 0 200 360" aria-hidden="true">
+      <defs>
+        <linearGradient id="lockG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8a6420"/><stop offset=".35" stop-color="#fff1bd"/><stop offset=".65" stop-color="#d1a649"/><stop offset="1" stop-color="#8a6420"/></linearGradient>
+        <linearGradient id="shackleG" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#9c7425"/><stop offset=".45" stop-color="#fff1bd"/><stop offset="1" stop-color="#9c7425"/></linearGradient>
+        <radialGradient id="glowG"><stop offset="0" stop-color="#fff6d0"/><stop offset="1" stop-color="#fff6d0" stop-opacity="0"/></radialGradient>
+      </defs>
+      <g class="shackle"><path d="M62 130 V82 a38 38 0 0 1 76 0 V130" fill="none" stroke="url(#shackleG)" stroke-width="14" stroke-linecap="round"/></g>
+      <g class="key">
+        <rect x="96" y="196" width="8" height="74" fill="url(#shackleG)"/>
+        <rect x="104" y="214" width="12" height="6" fill="url(#shackleG)"/><rect x="104" y="228" width="8" height="6" fill="url(#shackleG)"/>
+        <g class="bow"><circle cx="100" cy="288" r="19" fill="none" stroke="url(#shackleG)" stroke-width="9"/><circle cx="100" cy="288" r="5" fill="#a5132b"/></g>
+      </g>
+      <rect x="38" y="118" width="124" height="112" rx="16" fill="url(#lockG)" stroke="#7a5a1c" stroke-width="1.5"/>
+      <rect x="48" y="128" width="104" height="92" rx="10" fill="none" stroke="#fff1bd" stroke-opacity=".5" stroke-width="1.2"/>
+      <circle cx="100" cy="158" r="10" fill="#4a0b19"/><path d="M95 162 L92 190 H108 L105 162 Z" fill="#4a0b19"/>
+      <path d="M92 226 h16 v4 h-16 Z" fill="#4a0b19"/>
+      <circle class="glow" cx="100" cy="226" r="26" fill="url(#glowG)"/>
+    </svg>
+    <p class="gate-hint" data-ur="کھولنے کے لیے چھوئیں">Tap to unlock</p>
+  </div>
+  <button class="gate-btn" id="openBtn" aria-label="Unlock to view the invitation"></button>
+</div>
+
+<button class="lang" id="langBtn" type="button" aria-label="Switch language · زبان تبدیل کریں">اردو</button>
+
+<button id="veil" aria-label="Tap to begin, with music">
+
+<div></div>
+  <span class="vcard">
+    <span class="vcap" data-ur="آپ مدعو ہیں">You are invited</span>
+    <!-- <span class="vname foil" data-ur="حفصہ اور اسامہ">Hafsa &amp; Usama</span> -->
+    <svg class="orn" viewBox="0 0 240 30" aria-hidden="true"><use href="#orn"/></svg>
+    <span class="note" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg></span>
+    <b data-ur="شروع کرنے کے لیے چھوئیں">Tap to begin</b>
+    <small data-ur="آواز کے ساتھ دیکھنے کا لطف دوبالا ہے">Best enjoyed with sound on</small>
+  </span>
+
+
+</button>
+
+<main>
+  <!-- ================= Hero ================= -->
+
+
+  <section class="hero" id="top">
+    <div class="wreath-wrap" id="wreathWrap">
+      <svg class="wreath" id="wreath" viewBox="-545 -545 1090 1090" aria-hidden="true"></svg>
+    </div>
+    <div class="hero-text">
+      <p class="caps up" style="--i:0" data-ur="تاریخ محفوظ کر لیجیے">Save the date</p>
+      <h1>
+        <span class="foil up" style="--i:1" data-ur="حفصہ">Hafsa</span>
+        <span class="weds up" style="--i:2" data-ur="اور">&amp;</span>
+        <span class="foil up" style="--i:3" data-ur="اسامہ">Usama</span>
+      </h1>
+      <!-- <p class="sub up" style="--i:4" data-ur="جمعہ · 20 مارچ 2027">Friday · 20 March 2027</p> -->
+    </div>
+    <!-- <span class="down up" style="--i:6" data-ur="نیچے دیکھیں">Scroll</span> -->
+  </section>
+
+  <section class="plan-invite-part">
+    <div class="note reveal">
+      <p class="caps" data-ur="آپ مدعو ہیں">You are invited</p>
+      <svg class="orn" viewBox="0 0 240 30" aria-hidden="true"><use href="#orn"/></svg>
+      <p data-ur="اپنے خاندانوں کے ساتھ، ہم آپ کو <b>حفصہ اور اسامہ</b> کی خوشیوں میں شرکت کی دعوت دیتے ہیں۔ براہِ کرم تاریخ محفوظ کر لیجیے اور ایک یادگار شام میں ہمارے ساتھ شامل ہوں۔">Together with our families, we request the honour of your presence as we celebrate <b>Hafsa &amp; Usama</b>. Please save the date and join us for an evening to remember.</p>
+    </div>
+  </section>
+
+  <!-- ================= Save the date ================= -->
+  <section class="chapter" id="date">
+    <svg class="spray tl" data-spray viewBox="0 0 220 150" aria-hidden="true"></svg>
+    <svg class="spray br" data-spray viewBox="0 0 220 150" aria-hidden="true"></svg>
+    <svg class="ghost" data-speed=".12" viewBox="0 0 200 196" aria-hidden="true"><path d="M100 188 C28 130 6 92 6 62 C6 30 30 8 58 8 C78 8 94 18 100 36 C106 18 122 8 142 8 C170 8 194 30 194 62 C194 92 172 130 100 188 Z"/><path d="M100 160 C44 116 26 88 26 64 C26 40 44 24 62 24 C79 24 93 33 100 50 C107 33 121 24 138 24 C156 24 174 40 174 64 C174 88 156 116 100 160 Z"/><path d="M100 60 C112 72 112 88 100 100 C88 88 88 72 100 60 Z M100 100 C112 112 112 128 100 140 C88 128 88 112 100 100 Z M70 100 C82 88 98 88 100 100 C88 112 72 112 70 100 Z M130 100 C118 88 102 88 100 100 C112 112 128 112 130 100 Z"/><circle cx="100" cy="100" r="3.5"/></svg>
+    <div class="grid">
+      <div class="title reveal">
+        <p class="caps" data-ur="اپنے کیلنڈر میں نشان لگائیں">Mark your calendar</p>
+        <h2 class="word foil" data-ur="تاریخ محفوظ کیجیے">Save the Date</h2>
+        <p class="tagline" data-ur="خوشیوں، اپنوں اور جشن سے بھری ایک شام۔">An evening of joy, family and celebration.</p>
+      </div>
+      <div class="card reveal d1" id="card">
+        <p class="day foil">20</p>
+        <p class="date" data-ur="جمعہ · مارچ 2027">Friday · March 2027</p>
+        <dl>
+          <div><dt data-ur="وقت">Time</dt><dd data-ur="شام 7:00 بجے">7:00 PM</dd></div>
+          <div><dt data-ur="مقام">Venue</dt><dd data-ur="رائل ڈائنسٹی مارکی">Royal Dynasty Marquee</dd></div>
+        </dl>
+        <div class="links">
+          <a class="btn" data-ur="نقشہ" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Royal+Dynasty+Marquee">Map</a>
+          <a class="btn" data-ur="کیلنڈر میں محفوظ کریں" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Hafsa%20%26%20Usama&dates=20270320T140000Z/20270320T180000Z&location=Royal%20Dynasty%20Marquee">Add to calendar</a>
+        </div>
+        <canvas id="scratch" aria-label="Scratch to reveal the date"></canvas>
+        <div class="scratch-hint"><b data-ur="کھرچ کر تاریخ دیکھیں">Scratch to reveal the date</b><small data-ur="اپنی انگلی یا ماؤس سے رگڑیں">Rub with your finger or mouse</small></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= Finale ================= -->
+  <section class="finale" id="finale">
+    <svg class="spray bl" data-spray viewBox="0 0 220 150" aria-hidden="true"></svg>
+    <svg class="spray br" data-spray viewBox="0 0 220 150" aria-hidden="true"></svg>
+    <div class="reveal">
+      <p class="caps" data-ur="انتظار کی گھڑیاں">Counting down to</p>
+      <h2 class="foil" data-ur="خوشیوں کا دن">The Big Day</h2>
+      <div class="count">
+        <div><b id="cd">0</b><span data-ur="دن">Days</span></div>
+        <div><b id="ch">00</b><span data-ur="گھنٹے">Hours</span></div>
+        <div><b id="cm">00</b><span data-ur="منٹ">Minutes</span></div>
+        <div><b id="cs">00</b><span data-ur="سیکنڈ">Seconds</span></div>
+      </div>
+    </div>
+  </section>
+
+
+<!-- ................TimeLine................. -->
+
+<section class="wedding-timeline">
+    <div class="timeline-inner">
+    <div class="timeline-heading">
+        <span>THE CELEBRATION</span>
+        <h2>The Wedding Day</h2>
+        <p>A beautiful day filled with love and memories</p>
+    </div>
+
+    <div class="timeline">
+
+        <div class="timeline-item">
+            <div class="timeline-content">
+                <span class="timeline-time">04:00 PM</span>
+                <h3>WELCOME</h3>
+                <p>Welcome our guests with love and blessings.</p>
+            </div>
+            <div class="timeline-marker">✦</div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-content">
+                <span class="timeline-time">05:00 PM</span>
+                <h3>CEREMONY</h3>
+                <p>Witness the beautiful beginning of forever.</p>
+            </div>
+            <div class="timeline-marker">♡</div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-content">
+                <span class="timeline-time">06:00 PM</span>
+                <h3>COCKTAIL HOUR</h3>
+                <p>Enjoy lovely moments with family and friends.</p>
+            </div>
+            <div class="timeline-marker">✧</div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-content">
+                <span class="timeline-time">08:00 PM</span>
+                <h3>DINNER</h3>
+                <p>Enjoy a wonderful dinner with your loved ones.</p>
+            </div>
+            <div class="timeline-marker">♕</div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-content">
+                <span class="timeline-time">09:00 PM</span>
+                <h3>DANCING</h3>
+                <p>Let's celebrate this special night together.</p>
+            </div>
+            <div class="timeline-marker">❋</div>
+        </div>
+
+    </div>
+    </div>
+</section>
+
+
+    <!-- Venue Map Section -->
+<section class="venue-map">
+    <div class="venue-map-inner reveal">
+    <div class="venue-map-heading">
+        <p class="caps" data-ur="تقریب کا مقام">FIND THE VENUE</p>
+
+        <h2 data-ur="رائل ڈائنسٹی">Royal Dynasty</h2>
+
+        <p data-ur="ہماری خوشیوں کی تقریب تک پہنچنے کے لیے نقشہ دیکھیے">
+            Find your way to our celebration
+        </p>
+    </div>
+
+    <div class="venue-map-frame">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3325.1840374722897!2d73.10271689999999!3d33.5485944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dfed90548593a5%3A0xdc09eba26ed60a4c!2sRoyal%20Dynasty!5e0!3m2!1sen!2s!4v1795459573896!5m2!1sen!2s"
+            width="100%"
+            height="100%"
+            style="border:0;"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"
+            title="Royal Dynasty Location">
+        </iframe>
+    </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+  <section class="rsvp-sign">
+    <div class="rsvp reveal">
+      <p class="caps" data-ur="براہِ کرم جواب دیجیے">Kindly respond</p>
+      <h2 class="foil" data-ur="کیا آپ ہمارے ساتھ شامل ہوں گے؟">Will you join us?</h2>
+      <p class="ask" data-ur="آپ کی موجودگی اور دعائیں ہماری خوشیوں کو مکمل کر دیں گی۔">Your presence and prayers will make our celebrations complete.</p>
+      <div class="links">
+        <a class="btn solid" id="rsvpYes" data-ur="خوشی سے قبول ہے" target="_blank" rel="noopener" href="#">Joyfully accept</a>
+        <a class="btn" id="rsvpWish" data-ur="دعائیں بھیجیں" target="_blank" rel="noopener" href="#">Send your wishes</a>
+      </div>
+    </div>
+    <div class="sign reveal">
+      <svg class="orn" viewBox="0 0 240 30" aria-hidden="true"><use href="#orn"/></svg>
+      <p class="caps" data-ur="محبتوں کے ساتھ">With love</p>
+      <p class="names foil" data-ur="حفصہ اور اسامہ">Hafsa &amp; Usama</p>
+      <p class="tag">#HafsaWedsUsama</p>
+    </div>
+  </section>
+</main>
+
+
+
+
+
+
+
+
+
+
+
+<button id="music" aria-label="Play or pause music"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg></button>
+<audio id="audio" src="./ishq-murshid.mp3" preload="auto" loop></audio>
+<script>
+(function () {
+  var body = document.body;
+  var intro = document.getElementById('intro');
+  var q = location.search;
+  var openBtn = document.getElementById('openBtn');
+  var skip = /[?&]open/.test(q);
+  var reduced = skip || window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (skip) { document.documentElement.classList.add('skip'); body.classList.remove('locked'); }
+
+  /* ----- English / Urdu: every translated element carries its Urdu text in data-ur.
+     Add ?lang=ur to the address to open directly in Urdu; the choice is remembered on this device. ----- */
+  var langBtn = document.getElementById('langBtn');
+  var titles = { en: document.title, ur: 'حفصہ اور اسامہ | تاریخ محفوظ کیجیے' };
+  function setLang(lang) {
+    var ur = lang === 'ur', root = document.documentElement;
+    root.lang = ur ? 'ur' : 'en';
+    root.dir = ur ? 'rtl' : 'ltr';
+    root.classList.toggle('ur', ur);
+    document.querySelectorAll('[data-ur]').forEach(function (el) {
+      if (el.dataset.en === undefined) el.dataset.en = el.innerHTML;
+      el.innerHTML = ur ? el.dataset.ur : el.dataset.en;
+    });
+    document.title = titles[lang];
+    langBtn.textContent = ur ? 'English' : 'اردو';
+    try { localStorage.setItem('inviteLang', lang); } catch (e) {}
+  }
+  var startLang = (q.match(/[?&]lang=(ur|en)/) || [])[1];
+  if (!startLang) { try { startLang = localStorage.getItem('inviteLang'); } catch (e) {} }
+  if (startLang === 'ur') setLang('ur');
+  langBtn.addEventListener('click', function () { setLang(document.documentElement.lang === 'ur' ? 'en' : 'ur'); });
+
+  /* small repeatable random, so the flowers land in the same places every visit */
+  var seed = 7;
+  function rnd() { seed = (seed * 16807) % 2147483647; return seed / 2147483647; }
+
+  /* ----- wreath of roses around the names ----- */
+  // (function () {
+  //   var svg = document.getElementById('wreath');
+  //   var tints = ['#c2334d', '#eeb0b0', '#8f1733', '#f6dcc0', '#d98a96', '#b02a4a'];
+  //   var html = '', i, a, R, x, y;
+  //   for (i = 0; i < 46; i++) {
+  //     a = i * (360 / 46) + rnd() * 4;
+  //     R = 432 + (rnd() - 0.5) * 100;
+  //     x = Math.cos(a * Math.PI / 180) * R; y = Math.sin(a * Math.PI / 180) * R;
+  //     html += '<g transform="translate(' + x.toFixed(1) + ' ' + y.toFixed(1) + ') rotate(' + (a + 90 + (i % 2 ? 48 : -48) + rnd() * 20).toFixed(0) + ') scale(' + (1 + rnd() * 0.8).toFixed(2) + ')">' +
+  //       '<path class="l" style="--n:' + i + '" d="M0 0 C22 -22 58 -22 80 0 C58 22 22 22 0 0 Z" fill="' + (i % 4 === 0 ? '#f5e1a0' : 'url(#goldG)') + '" stroke="#7a5a1c" stroke-width=".7"/></g>';
+  //   }
+  //   for (i = 0; i < 30; i++) {
+  //     a = rnd() * 360; R = 372 + rnd() * 130;
+  //     html += '<circle class="l" style="--n:' + (i + 10) + '" cx="' + (Math.cos(a) * R).toFixed(1) + '" cy="' + (Math.sin(a) * R).toFixed(1) + '" r="' + (5 + rnd() * 6).toFixed(1) + '" fill="#fff1bd"/>';
+  //   }
+  //   for (i = 0; i < 26; i++) {
+  //     a = i * (360 / 26) + (rnd() - 0.5) * 6;
+  //     R = 432 + (rnd() - 0.5) * 50;
+  //     var s = (i % 3 === 0 ? 158 : 112) + rnd() * 34;
+  //     x = Math.cos(a * Math.PI / 180) * R; y = Math.sin(a * Math.PI / 180) * R;
+  //     html += '<g transform="translate(' + x.toFixed(1) + ' ' + y.toFixed(1) + ') rotate(' + (rnd() * 360).toFixed(0) + ')"><g class="r" style="--n:' + i + '">' +
+  //       '<use href="#rose" x="' + (-s / 2).toFixed(1) + '" y="' + (-s / 2).toFixed(1) + '" width="' + s.toFixed(1) + '" height="' + s.toFixed(1) + '" style="color:' + tints[i % tints.length] + '"/></g></g>';
+  //   }
+  //   svg.innerHTML = html;
+  // })();
+
+  /* ----- corner sprays of roses ----- */
+  var c = { roses: ['#f6dcc0', '#c2334d', '#eeb0b0', '#a01c3c'], leaf: 'url(#goldG)', edge: '#7a5a1c', bud: '#fff1bd', stem: '#d4af5a' };
+  document.querySelectorAll('[data-spray]').forEach(function (svg) {
+    var leaf = 'M0 0 C16 -16 40 -16 56 0 C40 16 16 16 0 0 Z';
+    var spots = ['126 92) rotate(-22', '104 60) rotate(-72', '60 84) rotate(-152', '140 118) rotate(12', '64 118) rotate(164', '58 50) rotate(-118) scale(.8'];
+    var h = '<g fill="' + c.leaf + '" stroke="' + c.edge + '" stroke-width=".8">';
+    spots.forEach(function (t) { h += '<path d="' + leaf + '" transform="translate(' + t + ')"/>'; });
+    h += '</g><path d="M150 84 C170 64 190 58 208 40 M176 64 C182 52 184 46 184 36" fill="none" stroke="' + c.stem + '" stroke-width="1.4" stroke-linecap="round"/>';
+    h += '<g fill="' + c.bud + '"><circle cx="208" cy="40" r="4"/><circle cx="194" cy="52" r="3.2"/><circle cx="184" cy="36" r="3.4"/><circle cx="166" cy="72" r="2.8"/></g>';
+    h += '<use href="#rose" x="62" y="12" width="62" height="62" style="color:' + c.roses[0] + '"/>';
+    h += '<use href="#rose" x="18" y="48" width="92" height="92" style="color:' + c.roses[1] + '"/>';
+    h += '<use href="#rose" x="88" y="66" width="74" height="74" style="color:' + c.roses[2] + '"/>';
+    h += '<use href="#rose" x="146" y="100" width="44" height="44" style="color:' + c.roses[3] + '"/>';
+    svg.innerHTML = h;
+  });
+
+  /* ----- music: a short instrumental phrase (music-intro.mp3) repeats behind the doors; opening the doors
+     starts the song itself at 1:25, and it returns to 1:25 each time it ends. ----- */
+
+
+
+/* ----- Wedding Background Music ----- */
+
+var audio = document.getElementById('audio');
+var musicBtn = document.getElementById('music');
+var veil = document.getElementById('veil');
+
+audio.volume = 0.7;
+
+function startMusic() {
+    audio.play()
+        .then(function () {
+            musicBtn.classList.add('playing', 'ready');
+            console.log('Music is playing successfully!');
+        })
+        .catch(function (error) {
+            console.error('Music playback failed:', error);
+            alert('Music could not play: ' + error.message);
+        });
+}
+
+// Music button
+musicBtn.addEventListener('click', function () {
+    if (audio.paused) {
+        startMusic();
+    } else {
+        audio.pause();
+    }
+});
+
+audio.addEventListener('play', function () {
+    musicBtn.classList.add('playing', 'ready');
+});
+
+audio.addEventListener('pause', function () {
+    musicBtn.classList.remove('playing');
+});
+
+audio.addEventListener('error', function () {
+    console.error('Audio file error:', audio.error);
+    alert('MP3 file could not be loaded. Please check its location and filename.');
+});
+
+
+
+// Tap to begin screen
+veil.addEventListener('click', startMusic);
+
+// Music play/pause button
+musicBtn.addEventListener('click', function () {
+    if (audio.paused) {
+        startMusic();
+    } else {
+        audio.pause();
+    }
+});
+
+audio.addEventListener('play', function () {
+    musicBtn.classList.add('playing', 'ready');
+});
+
+audio.addEventListener('pause', function () {
+    musicBtn.classList.remove('playing');
+});
+
+audio.addEventListener('error', function () {
+    console.error('MP3 file could not be loaded. Check the file path.');
+});
+
+
+
+
+  /* ----- opening: the key slides in and turns, the padlock springs open, then the page appears ----- */
+ 
+/* ----- Opening: Padlock and Invitation Card ----- */
+
+var arrived = false;
+
+function arrive() {
+    if (arrived) return;
+
+    arrived = true;
+
+    // Hide padlock screen
+    intro.classList.add('done');
+
+    // Unlock the website
+    body.classList.add('opened');
+    body.classList.remove('locked');
+
+    // Hide intro completely
+    setTimeout(function () {
+        intro.style.display = 'none';
+    }, 1400);
+
+    // Show invitation veil
+    veil.style.display = 'flex';
+    veil.classList.add('show');
+}
+
+// First button: Unlock padlock + play music
+openBtn.addEventListener('click', function (e) {
+
+    e.preventDefault();
+
+    if (intro.classList.contains('open')) return;
+
+    startMusic();
+
+    intro.classList.add('open');
+
+    setTimeout(arrive, 2900);
+});
+
+// Second button: Open invitation card + play music
+veil.addEventListener('click', function (e) {
+
+    e.preventDefault();
+
+    startMusic();
+
+    // Hide invitation card
+    veil.classList.add('opened');
+
+    // Remove card after animation
+    setTimeout(function () {
+        veil.style.display = 'none';
+    }, 1000);
+
+});
+
+
+  /* ----- sections fade the sprays in as they come into view ----- */
+  if ('IntersectionObserver' in window) {
+    var seenIO = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) e.target.classList.add('seen'); });
+    }, { rootMargin: '-45% 0px -45% 0px' });
+    document.querySelectorAll('.chapter, .finale').forEach(function (s) { seenIO.observe(s); });
+  } else {
+    document.querySelectorAll('.chapter, .finale').forEach(function (s) { s.classList.add('seen'); });
+  }
+
+  /* ----- scroll reveal ----- */
+  var reveals = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window && !skip) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.14 });
+    reveals.forEach(function (n) { io.observe(n); });
+  } else {
+    reveals.forEach(function (n) { n.classList.add('in'); });
+  }
+
+  /* ----- depth: giant numeral drifts, the wreath and card lean toward the pointer ----- */
+  var ghosts = document.querySelectorAll('.ghost');
+  var wreathWrap = document.getElementById('wreathWrap');
+  if (!reduced) {
+    window.addEventListener('scroll', function () {
+      ghosts.forEach(function (g) {
+        var r = g.parentNode.getBoundingClientRect();
+        if (r.bottom < 0 || r.top > window.innerHeight) return;
+        g.style.transform = 'translateY(' + ((r.top + r.height / 2 - window.innerHeight / 2) * -g.dataset.speed).toFixed(1) + 'px)';
+      });
+    }, { passive: true });
+    window.addEventListener('pointermove', function (e) {
+      var x = e.clientX / window.innerWidth - 0.5, y = e.clientY / window.innerHeight - 0.5;
+      wreathWrap.style.setProperty('--wx', (-y * 10) + 'deg');
+      wreathWrap.style.setProperty('--wy', (x * 12) + 'deg');
+    }, { passive: true });
+    if (window.matchMedia('(hover: hover)').matches) {
+      document.querySelectorAll('.tilt').forEach(function (card) {
+        card.addEventListener('pointermove', function (e) {
+          var r = card.getBoundingClientRect();
+          var px = (e.clientX - r.left) / r.width - 0.5, py = (e.clientY - r.top) / r.height - 0.5;
+          card.style.transform = 'perspective(900px) rotateY(' + (px * 10) + 'deg) rotateX(' + (-py * 8) + 'deg) translateY(-6px)';
+        });
+        card.addEventListener('pointerleave', function () { card.style.transform = ''; });
+      });
+    }
+  }
+
+  /* ----- scratch-off foil: rub the card to reveal the date ----- */
+  (function () {
+    var cv = document.getElementById('scratch'), card = document.getElementById('card');
+    var g = cv.getContext('2d'), w = 0, h = 0, done = false, drawing = false, last = null, moves = 0;
+    function paint() {
+      var dpr = Math.min(window.devicePixelRatio || 1, 2);
+      w = Math.round(card.offsetWidth * dpr); h = Math.round(card.offsetHeight * dpr);
+      cv.width = w; cv.height = h;
+      var f = g.createLinearGradient(0, 0, w, h);
+      f.addColorStop(0, '#b8902f'); f.addColorStop(.3, '#f3e3a0'); f.addColorStop(.5, '#d6ae4c'); f.addColorStop(.75, '#f6e8b2'); f.addColorStop(1, '#b8902f');
+      g.globalCompositeOperation = 'source-over';
+      g.fillStyle = f; g.fillRect(0, 0, w, h);
+      for (var i = 0; i < 120; i++) {
+        g.fillStyle = 'rgba(255,250,220,' + (0.15 + Math.random() * 0.5).toFixed(2) + ')';
+        g.fillRect(Math.random() * w, Math.random() * h, 1.5 * dpr, 1.5 * dpr);
+      }
+    }
+    function pos(e) { var r = cv.getBoundingClientRect(); return { x: (e.clientX - r.left) * w / r.width, y: (e.clientY - r.top) * h / r.height }; }
+    function scrub(a, b) {
+      g.globalCompositeOperation = 'destination-out';
+      g.lineCap = 'round'; g.lineJoin = 'round'; g.lineWidth = w * 0.1;
+      g.beginPath(); g.moveTo(a.x, a.y); g.lineTo(b.x, b.y); g.stroke();
+    }
+    function cleared() {
+      var d = g.getImageData(0, 0, w, h).data, n = 0, tot = 0;
+      for (var i = 3; i < d.length; i += 64) { tot++; if (d[i] < 128) n++; }
+      return n / tot > 0.55;
+    }
+    function reveal() {
+      if (done) return;
+      done = true; cv.classList.add('cleared'); card.classList.add('revealed');
+      var r = card.getBoundingClientRect();
+      burst(r.left + r.width / 2, r.top + r.height * 0.4, 90, '#f3d98b');
+      heartBurst(r.left + r.width / 2, r.top + r.height * 0.35, '#ff9db0');
+    }
+    cv.addEventListener('pointerdown', function (e) {
+      if (done) return;
+      drawing = true; last = pos(e); card.classList.add('touched');
+      try { cv.setPointerCapture(e.pointerId); } catch (x) {}
+      scrub(last, { x: last.x + .1, y: last.y });
+      e.preventDefault();
+    });
+    cv.addEventListener('pointermove', function (e) {
+      if (!drawing || done) return;
+      var p = pos(e); scrub(last, p); last = p;
+      if (++moves % 8 === 0 && cleared()) reveal();
+    });
+    function stop() { if (!drawing) return; drawing = false; if (!done && cleared()) reveal(); }
+    cv.addEventListener('pointerup', stop); cv.addEventListener('pointercancel', stop);
+    paint();
+    function repaint() { if (!done && !card.classList.contains('touched')) paint(); }
+    window.addEventListener('load', repaint);
+    if ('ResizeObserver' in window) new ResizeObserver(repaint).observe(card); else window.addEventListener('resize', repaint);
+  })();
+
+  /* ----- RSVP: buttons open WhatsApp with a ready message. Put the host's number (country code, digits only,
+     e.g. '923001234567') in RSVP_PHONE; left empty, the guest picks the contact themselves. ----- */
+  var RSVP_PHONE = '';
+  function wa(text) { return 'https://wa.me/' + RSVP_PHONE + '?text=' + encodeURIComponent(text); }
+  document.getElementById('rsvpYes').href = wa('Assalam o Alaikum! We joyfully accept your invitation to the wedding of Hafsa & Usama on 20 March 2027. See you there!');
+  document.getElementById('rsvpWish').href = wa('Assalam o Alaikum! Sending our love and prayers to Hafsa & Usama. May Allah bless you both with a lifetime of happiness!');
+
+  /* ----- countdown (Pakistan time, 7:00 PM) ----- */
+  var target = new Date('2027-03-20T19:00:00+05:00').getTime();
+  function $(id) { return document.getElementById(id); }
+  function tick() {
+    var s = Math.floor(Math.max(0, target - Date.now()) / 1000);
+    $('cd').textContent = Math.floor(s / 86400);
+    $('ch').textContent = String(Math.floor(s % 86400 / 3600)).padStart(2, '0');
+    $('cm').textContent = String(Math.floor(s % 3600 / 60)).padStart(2, '0');
+    $('cs').textContent = String(s % 60).padStart(2, '0');
+  }
+  tick();
+  setInterval(tick, 1000);
+
+
+
+//  .............................Timeline>>.......................
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* ----- petals, gold dust, and fireworks at the end ----- */
+  var canvas = document.getElementById('fx');
+  var ctx = canvas.getContext('2d');
+  var W = window.innerWidth, H = window.innerHeight;
+  var petals = [], sparks = [];
+  var lite = window.matchMedia('(hover: none), (max-width: 820px)').matches;
+  var petalColors = [[196, 38, 72], [236, 160, 170], [246, 214, 196]], dust = '#f3d98b';
+  var fireColors = ['#f3d98b', '#fff6d0', '#ff9db0', '#ffd27a'];
+
+  function resize() {
+    var dpr = Math.min(window.devicePixelRatio || 1, lite ? 1.5 : 2);
+    W = window.innerWidth; H = window.innerHeight;
+    canvas.width = W * dpr; canvas.height = H * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+  function newPetal(fromTop) {
+    return { x: Math.random() * W, y: fromTop ? -20 - Math.random() * H * 0.3 : Math.random() * H, size: 7 + Math.random() * 10, vy: 0.5 + Math.random() * 1.1, vx: -0.3 + Math.random() * 0.6,
+      rot: Math.random() * 6.28, vr: -0.02 + Math.random() * 0.04, flip: Math.random() * 6.28, vf: 0.02 + Math.random() * 0.03, sway: Math.random() * 6.28, c: petalColors[Math.floor(Math.random() * petalColors.length)], alpha: 0.55 + Math.random() * 0.4 };
+  }
+  function newDust() { return { x: Math.random() * W, y: Math.random() * H, size: 1.2 + Math.random() * 3, phase: Math.random() * 6.28, speed: 0.02 + Math.random() * 0.04, vx: 0, vy: -0.05 - Math.random() * 0.2, life: Infinity }; }
+  function room() { var n = 0; for (var k = 0; k < sparks.length; k++) if (sparks[k].life !== Infinity) n++; return n < 260; }
+  function burst(x, y, n, color) {
+    if (reduced || !room()) return;
+    if (lite) n = Math.round(n * 0.4);
+    for (var i = 0; i < n; i++) {
+      var a = Math.random() * 6.28, v = 1 + Math.random() * 7;
+      sparks.push({ x: x, y: y, size: 1.6 + Math.random() * 3.6, vx: Math.cos(a) * v, vy: Math.sin(a) * v - 1, life: 80 + Math.random() * 70, color: color });
+    }
+  }
+  function heartBurst(x, y, color) {
+    if (reduced || !room()) return;
+    var hn = lite ? 36 : 70;
+    for (var i = 0; i < hn; i++) {
+      var t = i / hn * 6.2832, k = 0.2 + Math.random() * 0.03;
+      sparks.push({ x: x, y: y, size: 1.8 + Math.random() * 2, vx: 16 * Math.pow(Math.sin(t), 3) * k, vy: -(13 * Math.cos(t) - 5 * Math.cos(2 * t) - 2 * Math.cos(3 * t) - Math.cos(4 * t)) * k, life: 95 + Math.random() * 30, color: color });
+    }
+  }
+  function drawPetal(p) {
+    ctx.save();
+    ctx.translate(p.x, p.y); ctx.rotate(p.rot); ctx.scale(1, Math.cos(p.flip) * 0.7 + 0.3);
+    var g = ctx.createLinearGradient(0, -p.size, 0, p.size);
+    g.addColorStop(0, 'rgba(255,240,225,' + p.alpha + ')');
+    g.addColorStop(1, 'rgba(' + p.c[0] + ',' + p.c[1] + ',' + p.c[2] + ',' + p.alpha + ')');
+    ctx.beginPath();
+    ctx.moveTo(0, -p.size);
+    ctx.bezierCurveTo(p.size * 0.95, -p.size * 0.6, p.size * 0.7, p.size * 0.75, 0, p.size);
+    ctx.bezierCurveTo(-p.size * 0.7, p.size * 0.75, -p.size * 0.95, -p.size * 0.6, 0, -p.size);
+    ctx.fillStyle = g; ctx.fill();
+    ctx.restore();
+  }
+  function drawSpark(s, alpha, color) {
+    var r = s.size;
+    ctx.save();
+    ctx.translate(s.x, s.y); ctx.globalAlpha = alpha;
+    ctx.fillStyle = color;
+    ctx.beginPath();
+    ctx.moveTo(0, -r * 2.2); ctx.quadraticCurveTo(0, 0, r * 2.2, 0); ctx.quadraticCurveTo(0, 0, 0, r * 2.2); ctx.quadraticCurveTo(0, 0, -r * 2.2, 0); ctx.quadraticCurveTo(0, 0, 0, -r * 2.2);
+    ctx.fill();
+    ctx.restore();
+  }
+  var lastT = 0, live = 0;
+  function frame(now) {
+    var dt = lastT ? Math.min(3, (now - lastT) / 16.67) : 1; lastT = now;
+    ctx.clearRect(0, 0, W, H);
+    var i, p, s;
+    for (i = 0; i < petals.length; i++) {
+      p = petals[i];
+      p.sway += 0.015 * dt; p.x += (p.vx + Math.sin(p.sway) * 0.6) * dt; p.y += p.vy * dt; p.rot += p.vr * dt; p.flip += p.vf * dt;
+      if (p.y > H + 30 || p.x < -40 || p.x > W + 40) petals[i] = newPetal(true);
+      drawPetal(p);
+    }
+    for (i = sparks.length - 1; i >= 0; i--) {
+      s = sparks[i];
+      s.x += s.vx * dt; s.y += s.vy * dt;
+      if (s.life !== Infinity) {
+        var dmp = Math.pow(0.965, dt);
+        s.vx *= dmp; s.vy = s.vy * dmp + 0.03 * dt; s.life -= dt;
+        if (s.life <= 0) { sparks.splice(i, 1); continue; }
+        drawSpark(s, Math.min(1, s.life / 50), s.color || dust);
+      } else {
+        s.phase += s.speed * dt;
+        if (s.y < -10) { s.y = H + 10; s.x = Math.random() * W; }
+        drawSpark(s, 0.12 + 0.78 * Math.abs(Math.sin(s.phase)), dust);
+      }
+    }
+    requestAnimationFrame(frame);
+  }
+  if (!reduced) {
+    resize();
+    window.addEventListener('resize', resize);
+    var small = W < 700;
+    for (var i = 0; i < (small ? 12 : 30); i++) petals.push(newPetal(false));
+    for (var j = 0; j < (small ? 16 : 54); j++) sparks.push(newDust());
+    requestAnimationFrame(frame);
+
+    var fireworks = false;
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries) { fireworks = entries[0].isIntersecting; }, { threshold: 0.3 }).observe(document.querySelector('.sign'));
+    }
+    setInterval(function () {
+      if (!fireworks || document.hidden) return;
+      var fx = W * (0.14 + Math.random() * 0.72), fy = H * (0.14 + Math.random() * 0.4), fc = fireColors[Math.floor(Math.random() * fireColors.length)];
+      if (Math.random() < 0.45) heartBurst(fx, fy, fc); else burst(fx, fy, 46, fc);
+    }, 2200);
+  }
+})();
+</script>
+</body>
+</html>
